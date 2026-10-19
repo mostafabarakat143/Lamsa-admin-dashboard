@@ -1,26 +1,54 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg: #f6efe4;
+  --surface: #fff9f3;
+  --blush: #f4e3d6;
+  --rose: #c6a36a;
+  --rose-deep: #9c4e68;
+  --rose-hover: #7d3c52;
+  --ink: #3e342e;
+  --muted: #74685f;
+  --line: #e7d9c8;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-blush: var(--blush);
+  --color-rose: var(--rose);
+  --color-rose-deep: var(--rose-deep);
+  --color-rose-hover: var(--rose-hover);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --font-sans: var(--font-outfit), sans-serif;
+  --font-display: var(--font-cormorant), Georgia, serif;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-outfit), sans-serif;
+}
+
+h1,
+h2,
+h3,
+.font-display {
+  font-family: var(--font-cormorant), Georgia, serif;
+}
+
+*:focus-visible {
+  outline: 2px solid var(--rose-deep);
+  outline-offset: 2px;
+}
+
+/* Tailwind preflight sets margin:0; modal dialogs need auto margins to center. */
+dialog {
+  margin: auto;
+}
+
+dialog::backdrop {
+  background: rgb(62 52 46 / 0.4);
 }
